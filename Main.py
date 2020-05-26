@@ -10,8 +10,8 @@ DEBUG = False
 #-----------------------------------------------------------------------------------------
 
 def uploadImg(path):
-    clientId = "f69072d11c8640d" # Not secure
-    clientSecret = "4ca7e6f64b54475017869a9f791da43524293240" # Not secure
+    clientId = "" # Not secure
+    clientSecret = "" # Not secure
 
     client = ImgurClient(clientId, clientSecret)
 
@@ -21,14 +21,14 @@ def uploadImg(path):
 
 #-----------------------------------------------------------------------------------------
 
-ACCOUNT_SID = "ACf401bcd3172987e1c9b06e0ed92d7bf5" # Not secure
-AUTH_TOKEN = "f0c3fbce7200038bc188dbc5dfa1114a" # Not secure
+ACCOUNT_SID = "" # Not secure
+AUTH_TOKEN = "" # Not secure
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 def sendSMS(body, url):
     global DEBUG
     if not DEBUG:
-        message = client.messages.create(body=body, from_="+12058318494", to="+15124061231", media_url=url)
+        message = client.messages.create(body=body, from_="", to="", media_url=url)
     else:
         message = False
         print(body)
@@ -36,7 +36,7 @@ def sendSMS(body, url):
 
 #-----------------------------------------------------------------------------------------
 
-rtspLink = "rtsp://admin:9401@192.168.10.200:554/cam/realmonitor?channel=3&subtype=0"
+rtspLink = ""
 
 source = cv2.VideoCapture(rtspLink)
 
